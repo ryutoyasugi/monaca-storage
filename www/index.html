@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h3>Local Strorage</h3>
+  <div id="local-storage">
+    <input v-model="name">
+    <button v-on:click="add">add</button>
+    <ol>
+      <li v-for="user in users">
+        {{ user.name }} <button v-on:click="del($index)">del</button>
+      </li>
+    </ol>
+    <ons-button onclick="localStorageClear()">all clear</ons-button>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
